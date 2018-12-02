@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Appointment Schedule</title>
+
+<style>
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+#logo { position: absolute; top: 0px; left: 200px; width: 200px }
+#position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
+#position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
+#position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.bg {
+    background-image: url("Schedule.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button_save{
+  border-radius: 8px;
+            background-color: #008CBA;
+      width: 165px;
+      height:60px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 700px; left: 885px;
+
+}
+.button_add{
+  border-radius: 8px;
+            background-color: #008CBA;
+      width: 165px;
+      height:60px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 700px; left: 700px;
+
+}
+
+table {
+    font-family: Georgia, serif;
+    border-collapse: collapse;
+    width: 60%;
+    font-size: 25px;
+    position: absolute; top: 350px; left: 250px;
+}
+
+td, th {
+    border: 3px solid #000066;
+    text-align: left;
+    padding: 15px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo">
+  </div>
+  
+  <a id="position_home" href="https://www.w3schools.com/html/" target="_self">Home</a> 
+  
+  <a id="position_about" href="https://www.w3schools.com/html/" target="_self">About us</a> 
+  
+  <a id="position_sign" href="https://www.w3schools.com/html/" target="_self">Sign up/Login</a>
+   
+ </div>
+   
+   <div class="bg">
+    
+    </button>
+    <table id="myTable">
+  <tr>
+   <th>Doctor</th>
+    <th>Time</th>
+  </tr>
+  <tr>
+    <td>Doctor 1</td>
+    <td>Monday</td>
+  </tr>
+  <tr>
+    <td>Doctor 2</td>
+    <td>Wednesday</td>
+  </tr>
+  
+</table>
+  <button class="button_add" onclick="myFunction()">Add</button>
+
+<script>
+function myFunction() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow(3);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = "New Doctor";
+    cell2.innerHTML = "New time";
+}
+</script>
+
+  
+
+ 
+   <button class="button_save">
+           <a href="App_schedule.html" target="_self" style="color:white" > Save </a>
+   </div>
+ 
+ 
+
+</body>
+</html>
