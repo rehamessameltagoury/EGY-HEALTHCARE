@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<title>Home_user</title>
+
+<style>
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+#logo { position: absolute; top: 0px; left: 200px; width: 200px }
+#position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
+#position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.dropdown { position: absolute; top: 57px; left: 1080px; width:200px }
+
+.dropbtn {
+    background-color: white;
+    font-size : 25px;
+    color: navy;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-size: 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.bg {
+    background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button_symp {
+            
+			border-radius: 8px;
+            background-color: #008CBA;
+			width: 300px;
+			height:200px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 400px; left: 200px;
+}
+.button_dep {
+            
+			border-radius: 8px;
+            background-color: #008CBA;
+			width: 300px;
+			height:200px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 400px; left: 615px;
+}
+.button_dr {
+            
+			border-radius: 8px;
+            background-color: #008CBA;
+			width: 300px;
+			height:200px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 400px; left: 1020px;
+}
+button:hover {
+    opacity:1;
+}
+</style>
+
+</head>
+<body>
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo">
+  </div>
+  
+  <a id="position_home" href="https://www.w3schools.com/html/" target="_self">Home</a> 
+  
+  <a id="position_about" href="https://www.w3schools.com/html/" target="_self">About us</a> 
+   <div class="dropdown">
+  <button class="dropbtn">Username</button>
+  <div class="dropdown-content">
+    <a href="#">Profile</a>
+    <a href="#">Sign Out</a>
+  </div>
+</div>
+
+   
+ </div>
+   
+   <div class="bg">
+  
+   <button class="button_symp" > 
+   <a href="https://www.w3schools.com/html/" target="_self" style="color:white" > Search for Symptoms </a>
+   </button>
+   
+   <button class="button_dep" > 
+   <a href="https://www.w3schools.com/html/" target="_self" style="color:white" > Search for a Department </a>
+   </button>
+   
+   <button class="button_dr" > 
+   <a href="https://www.w3schools.com/html/" target="_self" style="color:white" > Search for a Doctor </a>
+   </button>
+ 
+   
+   </div>
+ 
+ 
+
+</body>
+</html>
