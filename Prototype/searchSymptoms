@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>EGY Healthcare System</title>
+
+<style>
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+#logo { position: absolute; top: 0px; left: 200px; width: 200px }
+#position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
+#position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
+#position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+.bg {
+    background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+
+</head>
+<body>
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo">
+  </div>
+  
+  <a id="position_home" href="https://www.w3schools.com/html/" target="_self">Home</a> 
+  
+  <a id="position_about" href="https://www.w3schools.com/html/" target="_self">About us</a> 
+  
+  <a id="position_sign" href="https://www.w3schools.com/html/" target="_self">Sign up/Login</a>
+   
+</div>
+   
+<div class="bg" style="text-align: center;">
+  
+   <p style="color:black;font-size:50px;padding: 40px;">Search for Symptoms</p>
+
+<form  >
+  <input type="text" name="search" id="myInput" onkeyup="myFunction()" placeholder="Search for Symptoms.." title="Type in a symptom">
+  <ul id="myUL">
+  <li><a href="#">Abdominal pain</a></li>
+  <li><a href="#">Chest pain</a></li>
+  <li><a href="#">Cold</a></li>
+   <li><a href="#">Headache</a></li>
+  <li><a href="#">Fever</a></li>
+  <li><a href="#">Flu</a></li>
+  <li><a href="#">Toothache</a></li>
+  </ul>
+
+</form>
+   
+</div>
+ <script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+ 
+
+</body>
+</html>
