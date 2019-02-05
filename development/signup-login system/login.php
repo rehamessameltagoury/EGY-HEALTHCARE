@@ -160,7 +160,7 @@ button:hover {
     <input type="password" placeholder="Enter Password" name="pwd" required>
 
     <div class="clearfix">
-      <button type="submit" name ="login" class="signupbtn" action="profile.php">log in</button>
+      <button type="submit" name ="login" class="signupbtn" >log in</button>
     </div>
   </div>
 </form>
