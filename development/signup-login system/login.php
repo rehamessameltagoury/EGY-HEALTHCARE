@@ -1,6 +1,3 @@
-<?php 
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,6 +99,38 @@ button:hover {
 </head>
 <body>
 
+<?php 
+	//database connection
+	$dbservername="localhost";
+	$dbUsername="root";
+	$dbPassword="root";
+	$dbName="Healthcare";
+	$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,$dbName);
+
+	if(isset($_POST['username']))
+	{
+		$name=$_POST['username'];
+		$pwd=$_POST['pwd'];
+		$sql="SELECT * FROM USERS WHERE user_name = '".$name."' AND user_pwd = '".$pwd."' limit 1";
+		
+		$result= mysqli_query($conn,$sql);
+		
+		if(mysqli_num_rows($result)==1)
+		{
+			header('Location: profile.php');
+			exit();
+		}
+		
+		else 
+		{
+			echo "You have entered incorrect password";
+			exit();
+		}
+	
+	}
+	
+?>
+
 <div style="background-color:white;color:brown;padding:20px;height:120px">
 
   <div id="logo">
@@ -118,20 +147,20 @@ button:hover {
    
    <div class="bg">
      <div id='sign'>
-    <form action="include/login_inc.php" method="POST"  style="border:1px solid #ccc">
+    <form action="#" method="POST"  style="border:1px solid #ccc">
   <div class="container">
     <h1>Log in</h1>
     <p>Please fill in this form to login.</p>
     <hr>
   
-   <label for="user_name"><b>User Name:</b></label>
-    <input type="text" placeholder="user name" name="user_name" required>
+   <label for="username"><b>User Name:</b></label>
+    <input type="text" placeholder="user name" name="username" required>
   
-   <label for="psw"><b>Password:</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+   <label for="pwd"><b>Password:</b></label>
+    <input type="password" placeholder="Enter Password" name="pwd" required>
 
     <div class="clearfix">
-      <button type="submit" name ="login" class="signupbtn">log in</button>
+      <button type="submit" name ="login" class="signupbtn" action="profile.php">log in</button>
     </div>
   </div>
 </form>
