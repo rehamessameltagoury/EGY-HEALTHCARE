@@ -118,9 +118,9 @@ th {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="home.php" target="_self">Home</a> 
   
-  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  <a id="position_about" href="about_us.php" target="_self">About us</a> 
   
   <div class="dropdown">
   <button class="dropbtn">Username</button>
@@ -141,7 +141,7 @@ th {
 	 
 	 <?php 
 	 include 'dbh_inc.php';
-	    //Change Profile Picture
+	 //Change Profile Picture
    if (@$_GET['action']== "ci")
    {
     echo '<form action="profile.php?action=ci" method="POST" enctype="multipart/form-data">
@@ -191,20 +191,32 @@ th {
 	echo '</form>';
    }
    
+   
+    //Display User information
+	
+   $id = $_REQUEST['user_uid'];
+   $get = mysql_query("SELECT * FROM USERS WHERE user_uid='$uid'";
+   $get2 = mysql_fetch_assoc($get);
+   $firstname = $get2('user_first');
+   $lastname = $get2('user_last');
+   $userid = $get2('user_id');
+   $email = $get2('user_email');
+   $gender = $get2('user_gender');
+   
    ?>
 	 
 	  
 	  
 	  <div class="options">
-       <button type="button"><a id="about" href="Profile.About.html" target="_self">About</a> <br>
+       <button type="button"><a id="about" href="Profile.php" target="_self">About</a> <br>
       </div></button>
     
 	<div class="options">
-     <button type="button"><a id="medicine" href="Medicine_schedule.html" target="_self">Medicine Schedule</a> <br>
+     <button type="button"><a id="medicine" href="Medicine_schedule.php" target="_self">Medicine Schedule</a> <br>
     </div></button>
    
    <div class="options">
-     <button type="button"><a id="appointment" href="App_schedule.html" target="_self">Appointment Schedule</a>
+     <button type="button"><a id="appointment" href="App_schedule.php" target="_self">Appointment Schedule</a>
     </div> </button>
 	
    </div>
@@ -214,23 +226,23 @@ th {
    <table style="width:80%;margin-left:5%;text-align:left">
   <tr>
   	<th>User ID</th> 
-    <td>1</td>
+    <td><?php echo $userid; ?></td>
   </tr>
   <tr>
     <th>First Name</th>
-    <td>Smith</td>
+    <td><?php echo $firstname; ?></td>
   </tr>
   <tr>
   	<th>Last Name</th> 
-    <td>Jill</td>
+    <td><?php echo $lastname; ?></td>
   </tr>
   <tr>
   	<th>Email</th> 
-    <td>useremail@hotmail.com</td>
+    <td><?php echo $email; ?></td>
   </tr>
   <tr>
   	<th>Gender</th> 
-    <td>Male</td>
+    <td><?php echo $gender; ?></td>
   </tr>
   
 
