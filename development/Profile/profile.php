@@ -141,6 +141,7 @@ th {
 	 
 	 <?php 
 	 include 'dbh_inc.php';
+	    //Change Profile Picture
    if (@$_GET['action']== "ci")
    {
     echo '<form action="profile.php?action=ci" method="POST" enctype="multipart/form-data">
