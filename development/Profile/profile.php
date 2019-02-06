@@ -203,13 +203,13 @@ $conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,
    
     //Display User information
 	
-   $id = isset($_REQUEST['ID']);
+   $id = isset($_REQUEST['user_id']);
    $pwd= isset($_REQUEST['user_pwd']);
-   $get = mysqli_query($conn,"SELECT * FROM USERS WHERE ID='$id' AND user_pwd='$pwd'");
+   $get = mysqli_query($conn,"SELECT * FROM USERS WHERE user_id='$id' AND user_pwd='$pwd'");
    $get2 = mysqli_fetch_assoc($get);
    $firstname = $get2{'user_first'};
    $lastname = $get2{'user_last'};
-   $userid = $get2{'ID'};
+   $userid = $get2{'user_id'};
    $email = $get2{'user_email'};
    $gender = $get2{'user_gender'};
    
