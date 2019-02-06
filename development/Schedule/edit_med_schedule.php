@@ -88,21 +88,18 @@ input[type=text] {
 
 </style>
 
-
+/*
 <script>
-  function addfn(){
-    $("#container").append("<p>hello</p>");
-  }
-  /*
+ 
   $(document).ready(function(e){
     $(".button_add").click(function(e){
       alert();
     })
   });
-  */
+  
 
 </script>
-
+*/
 </head>
 <body>
 
