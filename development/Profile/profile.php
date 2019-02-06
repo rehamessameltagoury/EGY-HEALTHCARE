@@ -1,4 +1,11 @@
+ <?php
+// Start the session
+session_start();
+?>
+ 
+ 
  <!DOCTYPE html>
+ 
 <html>
 <head>
 
@@ -141,13 +148,13 @@ th {
 	 
 	 <?php 
 	 
+	 
 	 //database connection
-$dbservername="localhost";
-$dbUsername="root";
-$dbPassword="root";
-$dbName="Healthcare";
-$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,
-	$dbName);
+	$dbservername="localhost";
+	$dbUsername="root";
+	$dbPassword="";
+	$dbName="Healthcare";
+	$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,$dbName);
 	 
 	 
 	 //Change Profile Picture
@@ -160,7 +167,7 @@ $conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,
 	<input type="submit" name="change_pic" value="Change"> <br/>';
 	
 	  if(isset($_POST['change_pic']))
-	  { 
+	  {   $username = $_SESSION['username'];
           $errors = array();
 		  $allowed_e = array('png' , 'jpg' , 'jpeg');
 		  $file_name = $_FILES['image']['name'];
@@ -183,7 +190,7 @@ $conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,
 			  move_uploaded_file($file_tmp , 'images/' .$file_name);
 			  $image_up = 'images/' .$file_name;
 			
-			  if ($query = mysqli_query($conn,"UPDATE USERS SET profile_pic='".$image_up."' WHERE user_name='".$_SESSION['username']."'") )
+			  if ($query = mysqli_query($conn,"UPDATE USERS SET profile_pic='".$image_up."' WHERE user_name='".$username."'") )
 			  {
 				  echo 'Image changed.';
 			  }
@@ -203,15 +210,16 @@ $conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,
    
     //Display User information
 	
-   $id = isset($_REQUEST['user_id']);
-   $pwd= isset($_REQUEST['user_pwd']);
-   $get = mysqli_query($conn,"SELECT * FROM USERS WHERE user_id='$id' AND user_pwd='$pwd'");
+   $username = $_SESSION['username'];
+   $pwd= $_SESSION['pwd'];
+   $get = mysqli_query($conn,"SELECT * FROM USERS WHERE user_name='".$username."' AND user_pwd='".$pwd."';");
    $get2 = mysqli_fetch_assoc($get);
    $firstname = $get2{'user_first'};
    $lastname = $get2{'user_last'};
-   $userid = $get2{'user_id'};
+   $userid = $get2{'ID'};
    $email = $get2{'user_email'};
    $gender = $get2{'user_gender'};
+   
    
    ?>
 	 
