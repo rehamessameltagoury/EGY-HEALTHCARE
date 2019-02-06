@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<title>Book</title>
+
+<style>
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+#logo { position: absolute; top: 0px; left: 200px; width: 200px }
+#position_home { position: absolute; top: 43px; left: 680px; width: 200px ;font-size:25px}
+#position_about { position: absolute; top: 43px; left:880px; width: 200px ;font-size:25px}
+#position_sign { position: absolute; top: 43px; left: 1080px; width: 200px ;font-size:25px}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+
+.bg {
+
+    background-image: url("form.jpg");
+
+    height: 100%;  width: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  width:200px;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+#sign { position: absolute; left: 780px; height=100% }
+</style>
+</head>
+
+<body>
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo" height="121.5">
+  </div>
+  
+ <a id="position_home" href="home.html" target="_self">Home</a> 
+  
+  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  
+  <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
+   
+ </div>
+
+<!--form-->
+<div class="col-sm-4"></div>
+
+<div class="col-sm-4">
+
+<div style="background-color:white;opacity: 0.7; margin-top:10px;">
+<form action="book.php" method="post">
+<h3>Full name</h3> 
+<input type="text" name="full_name" required> <br>
+<h3>E-mail</h3>  
+<input type="text" name="e_mail" required> <br>
+<h3>Doctor's full name</h3>  
+<input type="text" name="dr_name" required> <br>
+<h3>Doctor's department</h3>  
+<input type="text" name="dr_dep" required> <br>
+<h3>Appointment Day</h3> <h5>(ex: SUN)</h5> 
+<input type="text" name="day" required><br><br>
+<!--<button type="button" class="btn btn-primary"><a href="book.php" target="_self" style="color:white">Book</a></button><br>-->
+<center><input class="btn btn-primary btn-block"" type="submit" value="Book" onclick="confirmBooking()">
+</center>
+</form>
+</div>
+</div>
+</div>
+<div class="col-sm-4"></div>
+
+<script>
+function confirmBooking() {
+  confirm("Are you sure you want to book this appointment ?");
+}
+</script>
+
+</body>
+</html>
