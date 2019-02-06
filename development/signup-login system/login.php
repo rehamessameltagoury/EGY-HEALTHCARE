@@ -107,7 +107,7 @@ button:hover {
 	$dbName="Healthcare";
 	$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,$dbName);
 
-	if(isset($_POST['username']))
+	if(isset($_POST['login']))
 	{
 		$name=$_POST['username'];
 		$pwd=$_POST['pwd'];
@@ -123,7 +123,7 @@ button:hover {
 		
 		else 
 		{
-			echo "You have entered incorrect password";
+			echo "You have entered incorrect username/password";
 			exit();
 		}
 	
@@ -147,7 +147,7 @@ button:hover {
    
    <div class="bg">
      <div id='sign'>
-    <form action="#" method="POST"  style="border:1px solid #ccc">
+    <form action="login.php" method="POST"  style="border:1px solid #ccc">
   <div class="container">
     <h1>Log in</h1>
     <p>Please fill in this form to login.</p>
@@ -160,7 +160,7 @@ button:hover {
     <input type="password" placeholder="Enter Password" name="pwd" required>
 
     <div class="clearfix">
-      <button type="submit" name ="login" class="signupbtn" >log in</button>
+      <button type="submit" name ="login" class="signupbtn">log in</button>
     </div>
   </div>
 </form>
