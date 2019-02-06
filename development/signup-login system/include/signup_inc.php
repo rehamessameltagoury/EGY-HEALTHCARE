@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 				exit();
 			} else{
 				//check user name is not repeated
-				$sql="SELECT * FROM USERS WHERE user_uid='$user_name'";
+				$sql="SELECT * FROM USERS WHERE user_name='$user_name'";
 				$result = mysqli_query($conn,$sql);
 				$resultCheck= mysqli_num_rows($result);
 
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 					//hashing the password
 					$hashedpwd= password_hash($psw,PASSWORD_DEFAULT);
 					//insert user inside the database
-					$sql="INSERT INTO USERS (user_first,user_last,user_email,user_uid,user_pwd,user_gender) VALUES 
+					$sql="INSERT INTO USERS (user_first,user_last,user_email,user_name,user_pwd,user_gender) VALUES 
 					('$fname','$lname','$email','$user_name','$hashedpwd','$gender');";
 					mysqli_query($conn,$sql);
 					header("Location: ../profile.php?signup=signupsuccess");
