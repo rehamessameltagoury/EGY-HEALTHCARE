@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,7 +105,7 @@ button:hover {
 	//database connection
 	$dbservername="localhost";
 	$dbUsername="root";
-	$dbPassword="root";
+	$dbPassword="";
 	$dbName="Healthcare";
 	$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,$dbName);
 
@@ -115,18 +117,25 @@ button:hover {
 		
 		$result= mysqli_query($conn,$sql);
 		
-		if(mysqli_num_rows($result)==1)
-		{
-			header('Location: profile.php');
-			exit();
-		}
+		 while ( $row = mysqli_fetch_assoc($result) )
+		 {
+			if ( ($row['user_name'] == $name)  && ($row['user_pwd'] == $pwd) )
+				{
+					session_start();
+					$_SESSION['username'] = $name;
+					$_SESSION['pwd'] = $pwd;
+              
+			
+					header('Location: profile.php');
+					exit();
+				}
 		
-		else 
-		{
-			echo "You have entered incorrect username/password";
-			exit();
-		}
-	
+			else 
+				{
+					echo "You have entered incorrect username/password";
+					exit();
+				}
+		 }
 	}
 	
 ?>
