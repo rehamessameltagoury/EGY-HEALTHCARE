@@ -9,3 +9,24 @@ user_id int (11) NOT null AUTO_INCREMENT PRIMARY KEY,
      user_gender varchar (256) NOT null ,
      profile_pic longblob NOT null
 );
+
+// doctors Table 
+CREATE TABLE doctors (
+    id int (11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar (256) NOT null ,
+    address varchar (256) NOT null ,
+    department varchar (256) NOT null ,
+    symptoms varchar (256) NOT null , 
+    telephone varchar (256) NOT null ,
+    appointments varchar (256) NOT null 
+);
+
+// patients_appointments Table 
+CREATE TABLE patients_appointments (
+    appointment int (11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar (256) NOT null ,
+    email varchar (256) NOT null ,
+    doctor varchar (256) NOT null ,
+    department varchar (256) NOT null , 
+    appointment_day varchar (256) NOT null 
+);
