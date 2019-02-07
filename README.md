@@ -5,7 +5,7 @@ Software Engineering project
   
   **Description:
   
-  This website is an online Doctors' Directory which aims to help patients to identify the suitable doctor for them
+  This website is an online Doctors' Directory which aims to help patients to identify the suitable doctor for them.
   It also allows the patient to make an account to book the best appointment with their doctor, they can also make a their medecine schedule
 
 **Team Members:
