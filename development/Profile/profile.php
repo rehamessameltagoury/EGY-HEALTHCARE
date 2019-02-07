@@ -156,58 +156,7 @@ th {
 	$dbName="Healthcare";
 	$conn=mysqli_connect($dbservername,$dbUsername,$dbPassword,$dbName);
 	 
-	 
-	 //Change Profile Picture
-   if (@$_GET['action']== "ci")
-   {
-    echo '<form action="profile.php?action=ci" method="POST" enctype="multipart/form-data">
-	<br/>
-	Available file extension : <b> .PNG .JPG .JPEG </b> <br/>
-	<input type="file" name="image"> <br/>
-	<input type="submit" name="change_pic" value="Change"> <br/>';
-	
-	  if(isset($_POST['change_pic']))
-	  {   $username = $_SESSION['username'];
-          $errors = array();
-		  $allowed_e = array('png' , 'jpg' , 'jpeg');
-		  $file_name = $_FILES['image']['name'];
-		  $file_e = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-		  $file_s = $_FILES['image']['size'];
-		  $file_tmp = $_FILES['image']['tmp_name'];
-		  
-		  if(in_array($file_e,$allowed_e) === false)
-		  {
-			  $errors[]= 'This file extension is not allowed.';
-		  }
-		  
-		  if($file_s > 209715)
-		  {
-			  $errors[]= 'File must be under 2mb' ;
-		  }
-		  
-		  if(empty($errors))
-		  {
-			  move_uploaded_file($file_tmp , 'images/' .$file_name);
-			  $image_up = 'images/' .$file_name;
-			
-			  if ($query = mysqli_query($conn,"UPDATE USERS SET profile_pic='".$image_up."' WHERE user_name='".$username."'") )
-			  {
-				  echo 'Image changed.';
-			  }
-		  } 
-		  else 
-		  {
-			  foreach ($errors as $error)
-			  {
-				  echo $error , '<br/>';
-			  }
-		  }
-			
-      }
-	echo '</form>';
-   }
-   
-   
+
     //Display User information
 	
    $username = $_SESSION['username'];
