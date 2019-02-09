@@ -125,9 +125,9 @@ th {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.php" target="_self">Home</a> 
+  <a id="position_home" href="home.html" target="_self">Home</a> 
   
-  <a id="position_about" href="about_us.php" target="_self">About us</a> 
+  <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
   <div class="dropdown">
   <button class="dropbtn">Username</button>
@@ -144,7 +144,7 @@ th {
    
      
      <img src="profilephoto.jpg" alt="user_image" style="width:250px;height:250px;padding:5px; border-radius:200px">
-    <center><a href='profile.php?action=ci'> Change Image</a><center>
+    
 	 
 	 <?php 
 	 
@@ -165,7 +165,7 @@ th {
    $get2 = mysqli_fetch_assoc($get);
    $firstname = $get2{'user_first'};
    $lastname = $get2{'user_last'};
-   $userid = $get2{'ID'};
+   $userid = $get2{'user_id'};
    $email = $get2{'user_email'};
    $gender = $get2{'user_gender'};
    
