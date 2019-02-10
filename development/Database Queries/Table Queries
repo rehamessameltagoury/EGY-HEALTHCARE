@@ -30,3 +30,17 @@ CREATE TABLE patients_appointments (
     department varchar (256) NOT null , 
     appointment_day varchar (256) NOT null 
 );
+
+// medicine schedule
+CREATE TABLE medicine (
+	id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    medicine_name varchar(256) not null,
+    medicine_time time(6) not null
+);
+
+//appointment schedule
+CREATE TABLE appointment (
+	id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Dr_name varchar(256) not null,
+    App_time date not null
+);
