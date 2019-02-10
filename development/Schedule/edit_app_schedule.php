@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,12 +38,12 @@ body, html {
 .button_save{
   border-radius: 8px;
             background-color: #008CBA;
-      width: 165px;
-      height:60px;
+      width: 200px;
+      height:70px;
       font-size: 25px;
       color: white;
       
-      position: absolute; top: 250px; left: 885px;
+      position: absolute; top: -5px; left: 641px;
 
 }
 .button_add{
@@ -107,22 +108,25 @@ input[type=text] {
  </div>
    
    <div class="bg">
-    
+
 
     <form id="myform" action="include/app_inc.php" method="POST">
+      <button class="button_save" type="submit" name="submit">Save</button>
       <div id="container">
+        
       <table>
         <tr>
           <th>
-            <input type="text" name="name" placeholder="Doctor Name">
+            <input type="text" name="newName" value="<?php echo $_GET['name']; ?>" >
           </th>
           <th>
-            <input type="text" name="time" placeholder="Appointment Date">
+            <input type="text" name="newTime" value="<?php echo $_GET['time']; ?>" >
+            <input type="hidden" name="id" value="<?php echo $_GET['edit']; ?>" >
           </th>
         </tr>
       </table>
 
-      <button class="button_save" type="submit" name="submit">Save</button>
+      
        
       </div>
     </form>
