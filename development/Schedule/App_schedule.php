@@ -88,7 +88,7 @@ td, th {
    
    <div class="bg">
     <button class="button_edit">
-           <a href="edit_app_schedule.php" target="_self" style="color:white" > Add New Appointment </a>
+           <a href="add_app_schedule.php" target="_self" style="color:white" > Add New Appointment </a>
     </button>
     <?php
 
@@ -98,7 +98,8 @@ td, th {
     echo "<table>";
       echo"<tr><th>Doctor</th><th>Date</th></tr>";
       while($row = mysqli_fetch_assoc($result)){
-        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time']}</td></tr>";
+        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time'] } <a href='edit_app_schedule.php?edit=$row[id]&name=$row[Dr_name]&time=$row[App_time]'>  edit</a> </td></tr>";
+        
 
      }
 
