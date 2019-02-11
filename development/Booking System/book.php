@@ -26,13 +26,13 @@
 session_start();
 
 global $con ;
-$con= mysqli_connect('localhost','root','');
+$con= mysqli_connect('sql307.epizy.com','epiz_23426192','qrhufcVnYDEVx');
 
 if (! $con) {
 	echo "Not connected to server!";
 }
 
-if (! mysqli_select_db($con,'healthcare system')) {
+if (! mysqli_select_db($con,'epiz_23426192_Healthcare')) {
 	echo "Database not selected";
 }
 	
