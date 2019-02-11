@@ -1,0 +1,7 @@
+Preconditions:
+    User should be logged in.
+    User clicked on Delete.
+      
+Expected Result:
+    User should be directed to Appointment Schedule page and the desired information is deleted.
+
