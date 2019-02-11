@@ -34,6 +34,7 @@ CREATE TABLE patients_appointments (
 // medicine schedule
 CREATE TABLE medicine (
 	id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	user_name varchar (256) NOT null , 
     medicine_name varchar(256) not null,
     medicine_time time(6) not null
 );
@@ -41,6 +42,7 @@ CREATE TABLE medicine (
 //appointment schedule
 CREATE TABLE appointment (
 	id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	user_name varchar (256) NOT null , 
     Dr_name varchar(256) not null,
     App_time date not null
 );
