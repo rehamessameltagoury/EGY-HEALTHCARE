@@ -1,9 +1,9 @@
 Preconditions :
-      User have a valid account.
+      User opens website.
 
 Steps:
-      1-Enter incorrect username or password
-      2-Click on Submit button
+      1-Enter doctor name, department and area.
+      2-Press Enter.
       
 Expected Result:
-      A " You have entered incorrect username/password " message appears.
+   	No results displayed (no matching results found).
