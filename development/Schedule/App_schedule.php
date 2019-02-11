@@ -1,5 +1,6 @@
 <?php
   include_once 'include/dbh_inc.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +92,8 @@ td, th {
            <a href="add_app_schedule.php" target="_self" style="color:white" > Add New Appointment </a>
     </button>
     <?php
-
+     $user=$_SESSION['username'];
+     
     $sql = "SELECT * FROM appointment";
     $result = mysqli_query($conn, $sql);
 
