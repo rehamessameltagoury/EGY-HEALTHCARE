@@ -1,0 +1,11 @@
+Preconditions:
+    User should be logged in.
+    User clicked on edit button.
+      
+Steps :
+    1-Edit medicine name and medicine time
+    2-Click on Save button
+   
+Expected Result:
+    User should be directed to Medicine Schedule page and the correct information are displayed.
+
