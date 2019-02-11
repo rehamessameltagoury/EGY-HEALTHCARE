@@ -1,0 +1,10 @@
+Preconditions :
+      User left an empty field
+
+Steps:
+      1-Left an empty field
+      2-Click on sign up button
+      
+Expected Result:
+        The User will be directed to the empty field to fill it 
+      
