@@ -108,7 +108,7 @@ input[type=text] {
             <input type="text" name="name" placeholder="Medicine Name">
           </th>
           <th>
-            <input type="text" name="time" placeholder="Medicine Date">
+            <input type="text" name="time" placeholder="Medicine Time">
           </th>
         </tr>
       </table>
