@@ -1,11 +1,11 @@
 Preconditions:
-      User should have a valid account
+    User should have a valid account
       
 Steps :
     1-Enter correct username & password
     2-Click on Submit button
    
 Expected Result:
-    User should be directed to his profile page and the correct information are displayed
+    User should be directed to his profile page and the correct information are displayed.
 
     
