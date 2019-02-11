@@ -1,5 +1,6 @@
 <?php
   include_once 'include/dbh_inc.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +92,9 @@ td, th {
            <a href="add_med_schedule.php" target="_self" style="color:white" > Add New Medicine </a>
     </button>
     <?php
-
+     
+     $username= $_SESSION['username'];
+     
     $sql = "SELECT * FROM medicine";
     $result = mysqli_query($conn, $sql);
 
