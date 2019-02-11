@@ -6,5 +6,5 @@ Steps:
       2-Click Book button.
       
 Expected Result:
-       1-
+       1-A warning message to make sure that the user wants to book this appointment, and notify him that if he wishes to cancel he must call doctor.
        2-A success message is shown to user to confirm his appointment.
