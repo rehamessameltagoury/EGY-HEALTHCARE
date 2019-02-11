@@ -95,7 +95,7 @@ td, th {
 
      $user= $_SESSION['username'];
      
-    $sql = "SELECT * FROM medicine";
+    $sql = "SELECT * FROM medicine , JOIN users ON users.user_name = medicine.user_name WHERE users.user_name = '".$username."'";
     $result = mysqli_query($conn, $sql);
 
     echo "<table>";
