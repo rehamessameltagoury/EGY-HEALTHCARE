@@ -1,5 +1,6 @@
 <?php
   include_once 'include/dbh_inc.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +93,8 @@ td, th {
     </button>
     <?php
 
+     $user= $_SESSION['username'];
+     
     $sql = "SELECT * FROM medicine";
     $result = mysqli_query($conn, $sql);
 
