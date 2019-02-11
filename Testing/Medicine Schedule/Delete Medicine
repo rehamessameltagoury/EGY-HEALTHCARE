@@ -1,0 +1,6 @@
+Preconditions:
+    User should be logged in
+    User clicked on delete.
+      
+Expected Result:
+    User should be directed to Medicine Schedule page and the desired information is deleted.
