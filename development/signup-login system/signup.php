@@ -142,11 +142,16 @@ button:hover {
     
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Already have an account</button>
-      <button type="submit" name ="submit" class="signupbtn">Sign Up</button>
+
+      <button href="login.php" type="submit" name ="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
+
+<form action="login.php">
+      <button type="submit" name="Already have an account" class="cancelbtn">Already have an account</button>
+      </form>
+
 </div>
  
    
