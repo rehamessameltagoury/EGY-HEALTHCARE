@@ -23,7 +23,7 @@
 
 <?php
 
-
+session_start();
 
 global $con ;
 $con= mysqli_connect('localhost','root','');
@@ -35,6 +35,8 @@ if (! $con) {
 if (! mysqli_select_db($con,'healthcare system')) {
 	echo "Database not selected";
 }
+	
+$name=$_SESSION['username'];	
 
 $patient=$_POST['full_name'];
 $email=$_POST['e_mail'];
@@ -43,7 +45,7 @@ $depp=$_POST['dr_dep'];
 $time=$_POST['day'];
 
 //check that the doctor and appointment day entered by user exist
-$sql1= "SELECT name,department FROM doctors WHERE name = '$dr' AND department='$depp' AND appointments LIKE ('%$time%')";
+$sql1= "SELECT name,department FROM doctors WHERE name = '$dr' AND department='$depp' AND appointments LIKE ('%$time%') ";
 $result=mysqli_query($con,$sql1);
 
 //executed when info. entered by user is valid
