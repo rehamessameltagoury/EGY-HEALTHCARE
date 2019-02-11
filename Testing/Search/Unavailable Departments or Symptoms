@@ -1,0 +1,9 @@
+Preconditions :
+      None
+
+Steps:
+      1-Enter a department/symptom that is not available
+      2-Click on Submit button
+      
+Expected Result:
+      A " The department/symptom is not available " message appears.
