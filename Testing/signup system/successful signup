@@ -1,0 +1,11 @@
+Preconditions:
+    User should have a valid Email
+    The User must choose a unique username&Password
+   
+      
+Steps :
+    1-the user should put his first name & last name & Email & password & username 
+    2-Click on sign up button
+   
+Expected Result:
+    User should be directed to his profile page and the correct information are displayed.
