@@ -1,0 +1,9 @@
+Preconditions :
+      User have a valid account.
+
+Steps:
+      1-Entered the sign up page 
+      2-Clicked on "Already have an account"button
+      
+Expected Result:
+      the User will be directed to the log in page.
