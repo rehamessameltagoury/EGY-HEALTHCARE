@@ -1,0 +1,9 @@
+Preconditions :
+      User choose an existing username in our database
+
+Steps:
+      1-Enter his username
+      2-Click on sign up button
+      
+Expected Result:
+      A message will appear to the user "signup=usertaken"
