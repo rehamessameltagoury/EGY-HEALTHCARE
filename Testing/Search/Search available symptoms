@@ -1,9 +1,11 @@
 Preconditions :
-      None
+      User opens website.
 
 Steps:
-      1-Write a symptom that is available
-      2-Click Enter
+      1-Enter a symptom that is available.
+      2-Press Enter.
       
 Expected Result:
+        A page with doctors from the department that specialises in trating the symptom that the user has entered.
+
       
