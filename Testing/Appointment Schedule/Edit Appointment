@@ -1,0 +1,10 @@
+Preconditions:
+    User should be logged in.
+    User clicked on edit button.
+      
+Steps :
+    1-Edit doctor name and appointment date
+    2-Click on Save button
+   
+Expected Result:
+    User should be directed to Appointment Schedule page and the correct information are displayed.
