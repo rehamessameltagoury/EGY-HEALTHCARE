@@ -1,0 +1,11 @@
+Preconditions:
+    User should be logged in.
+    User clicked on Add new appointment button.
+      
+Steps :
+    1-Enter doctor name and appointment date
+    2-Click on Save button
+   
+Expected Result:
+    User should be directed to Appointment Schedule page and the new information are added.
+
