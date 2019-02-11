@@ -150,7 +150,7 @@ button:hover {
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="singup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
    
  </div>
    
