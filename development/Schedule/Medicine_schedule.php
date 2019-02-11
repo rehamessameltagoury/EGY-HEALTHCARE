@@ -37,7 +37,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.button_edit{
+.button_add{
   border-radius: 8px;
             background-color: #008CBA;
       width: 200px;
@@ -87,8 +87,8 @@ td, th {
  </div>
    
    <div class="bg">
-    <button class="button_edit">
-           <a href="edit_med_schedule.php" target="_self" style="color:white" > Add New Medicine </a>
+    <button class="button_add">
+           <a href="add_med_schedule.php" target="_self" style="color:white" > Add New Medicine </a>
     </button>
     <?php
 
@@ -98,7 +98,8 @@ td, th {
     echo "<table>";
       echo"<tr><th>Medicine</th><th>Time</th></tr>";
       while($row = mysqli_fetch_assoc($result)){
-        echo"<tr><td>{$row['medicine_name']}</td><td>{$row['medicine_time']}</td></tr>";
+        echo"<tr><td>{$row['medicine_name']}</td><td>{$row['medicine_time'] } <a href='edit_med_schedule.php?edit=$row[id]&name=$row[medicine_name]&time=$row[medicine_time]'>(edit)</a>  <a href='include/del_med_inc.php?del=$row[id]'> (delete)</a> </td></tr>";
+        
 
      }
 
