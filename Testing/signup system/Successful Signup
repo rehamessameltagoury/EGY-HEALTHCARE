@@ -1,6 +1,6 @@
 Preconditions:
     User should have a valid Email
-    The User must choose a unique username&Password
+    The User must choose a unique username & Password
    
       
 Steps :
