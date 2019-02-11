@@ -1,0 +1,10 @@
+Preconditions :
+      User is logged in.
+
+Steps:
+      1-Fill form and enter the doctors info. incorrectly.
+      2-Click Book button.
+      
+Expected Result:
+       1-A warning message to make sure that the user wants to book this appointment, and notify him that if he wishes to cancel he must call doctor.
+       2-A failure message is shown to notify him that an error occured while booking due to incorrect doctor's info.
