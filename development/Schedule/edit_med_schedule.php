@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,34 +38,23 @@ body, html {
 .button_save{
   border-radius: 8px;
             background-color: #008CBA;
-      width: 165px;
-      height:60px;
+      width: 200px;
+      height:70px;
       font-size: 25px;
       color: white;
       
-      position: absolute; top: 250px; left: 885px;
-
-}
-.button_add{
-  border-radius: 8px;
-            background-color: #008CBA;
-      width: 165px;
-      height:60px;
-      font-size: 25px;
-      color: white;
-
-      
-      position: absolute; top: 350px; left: 70px;
+      position: absolute; top: 250px; left: 860px;
 
 }
 
-form {
+table {
     font-family: Georgia, serif;
     border-collapse: collapse;
     width: 60%;
     font-size: 25px;
     position: absolute; top: 350px; left: 250px;
 }
+
 
 td, th, {
     border: 3px solid #000066;
@@ -78,7 +68,8 @@ input[type=text] {
   box-sizing: border-box;
   background-color: transparent;
   border-radius: 7px;
-  font-size: 18px;
+  font-size: 27px;
+  font-family: Georgia, serif;
   display: block;
   text-align: center;
   color: black;
@@ -88,18 +79,7 @@ input[type=text] {
 
 </style>
 
-/*
-<script>
- 
-  $(document).ready(function(e){
-    $(".button_add").click(function(e){
-      alert();
-    })
-  });
-  
 
-</script>
-*/
 </head>
 <body>
 
@@ -118,68 +98,30 @@ input[type=text] {
  </div>
    
    <div class="bg">
-    
+
 
     <form id="myform" action="include/medicine_inc.php" method="POST">
+      <button class="button_save" type="submit" name="submit">Save</button>
       <div id="container">
+        
       <table>
         <tr>
           <th>
-            <input type="text" name="name" placeholder="Medicie Name">
+            <input type="text" name="newName" value="<?php echo $_GET['name']; ?>" >
           </th>
           <th>
-            <input type="text" name="time" placeholder="Medicine Time">
+            <input type="text" name="newTime" value="<?php echo $_GET['time']; ?>" >
+            <input type="hidden" name="id" value="<?php echo $_GET['edit']; ?>" >
           </th>
         </tr>
       </table>
 
-      <button class="button_save" type="submit" name="submit">Save</button>
+      
        
       </div>
     </form>
     
-    
-<!--
-
-  <button class="button_add" id="add" onclick="addfn()">Add</button>
-  <a href="#" class="button_add">Add</a>
-    <button class="button_add" id="add">Add</button>
--->
-
-   
-
-    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-      <script>
-        function myFunction() {
-        var form = document.getElementById("myform");
-        var row = form.insertRow(3);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = "New medicine";
-        cell2.innerHTML = "New time";
-        }
-      </script>
-
-      
--->
-
- 
+  
    
    </div>
  
