@@ -1,9 +1,10 @@
 Preconditions :
-      None
+      User opens website.
 
 Steps:
-      1-Write a department that is available
-      2-Click Enter
+      1-Write a department that is available.
+      2-Click Enter.
       
 Expected Result:
+      A page with doctors from the department that the user has entered.
       
