@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
 					//hashing the password
 					$hashedpwd= password_hash($psw,PASSWORD_DEFAULT);
 					//insert user inside the database
-					
+					session_start();
 					$_SESSION['username'] = $user_name;
 					$_SESSION['pwd'] = $psw;
 					
