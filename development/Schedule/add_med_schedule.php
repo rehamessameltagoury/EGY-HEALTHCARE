@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Medicine Schedule</title>
+
+<style>
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+#logo { position: absolute; top: 0px; left: 200px; width: 200px }
+#position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
+#position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
+#position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.bg {
+    background-image: url("Schedule.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button_save{
+  border-radius: 8px;
+            background-color: #008CBA;
+      width: 200px;
+      height:70px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: -5px; left: 641px;
+}
+.button_add{
+  border-radius: 8px;
+            background-color: #008CBA;
+      width: 165px;
+      height:60px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 350px; left: 70px;
+}
+form {
+    font-family: Georgia, serif;
+    border-collapse: collapse;
+    width: 60%;
+    font-size: 25px;
+    position: absolute; top: 350px; left: 250px;
+}
+td, th, {
+    border: 3px solid #000066;
+    text-align: left;
+    padding: 15px;
+}
+input[type=text] {
+  width: 100%;
+  border: 3px solid #000066;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 7px;
+  font-size: 27px;
+  display: block;
+  text-align: center;
+  color: black;
+}
+</style>
+
+
+</head>
+<body>
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo">
+  </div>
+  
+  <a id="position_home" href="home.html" target="_self">Home</a> 
+  
+  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  
+  <a id="position_sign" href="singup.php" target="_self">Sign up/Login</a>
+   
+ </div>
+   
+   <div class="bg">
+    
+
+    <form id="myform" action="include/add_med_inc.php" method="POST">
+      <div id="container">
+      <table>
+        <tr>
+          <th>
+            <input type="text" name="name" placeholder="Medicine Name">
+          </th>
+          <th>
+            <input type="text" name="time" placeholder="Medicine Date">
+          </th>
+        </tr>
+      </table>
+
+      <button class="button_save" type="submit" name="submit">Save</button>
+       
+      </div>
+    </form>
+    
+  
+   
+   </div>
+ 
+ 
+
+</body>
+</html>
