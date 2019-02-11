@@ -1,1 +1,10 @@
+Preconditions :
+      User is logged in.
 
+Steps:
+      1-Fill form and enter the doctors info. correctly.
+      2-Click Book button.
+      
+Expected Result:
+       1-
+       2-A success message is shown to user to confirm his appointment.
