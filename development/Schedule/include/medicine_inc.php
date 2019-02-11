@@ -1,30 +1,15 @@
 
-  
-
 <?php
 
-	include_once 'dbh_inc.php';
+  include_once 'dbh_inc.php';
 
-	$name = $_POST['name'];
-    $time = $_POST['time'];
-
-    $sql = "INSERT INTO medicine (medicine_name,medicine_time) VALUES('$name','$time');";
+    
+    $name = $_POST['newName'];
+    $time = $_POST['newTime'];
+    $id      = $_POST['id'];
+    $sql = "UPDATE medicine SET medicine_name='$name' , medicine_time='$time' WHERE id='$id'";
      mysqli_query($conn, $sql);
      
-
-
-
-
-    //echo "<table>";
-     // echo"<tr><th>Medicine</th><th>Time</th></tr>";
-      //while($row = mysqli_fetch_assoc($result)){
-        //echo"<tr><td>{$row['medicine_name']}</td><td>{$row['medicine_time']}</td></tr>";
-
-     //}
-
-
-    //echo"</table>";
-
     header("location: ../Medicine_schedule.php?submit=success");
 
 
