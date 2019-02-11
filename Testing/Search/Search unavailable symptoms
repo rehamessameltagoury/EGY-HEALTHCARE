@@ -2,7 +2,7 @@ Preconditions :
       None
 
 Steps:
-      1-Write a department/symptom that is not available
+      1-Write a symptom that is not available
       2-Click Enter
       
 Expected Result:
