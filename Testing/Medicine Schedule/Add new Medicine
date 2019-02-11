@@ -1,0 +1,10 @@
+Preconditions:
+    User should be logged in.
+    User clicked on Add new medicine button.
+      
+Steps :
+    1-Enter medicine name and medicine time
+    2-Click on Save button
+   
+Expected Result:
+    User should be directed to Medicine Schedule page and the new information are added.
