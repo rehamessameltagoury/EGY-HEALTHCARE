@@ -92,9 +92,10 @@ td, th {
            <a href="add_app_schedule.php" target="_self" style="color:white" > Add New Appointment </a>
     </button>
     <?php
+     
      $user=$_SESSION['username'];
      
-    $sql = "SELECT * FROM appointment";
+    $sql = "SELECT * FROM appointment , JOIN users ON users.user_name = appointment.user_name WHERE users.user_name = '".$username."'";
     $result = mysqli_query($conn, $sql);
 
     echo "<table>";
