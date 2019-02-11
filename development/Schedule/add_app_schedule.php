@@ -72,7 +72,7 @@ input[type=text] {
   box-sizing: border-box;
   background-color: transparent;
   border-radius: 7px;
-  font-size: 18px;
+  font-size: 25px;
   display: block;
   text-align: center;
   color: black;
