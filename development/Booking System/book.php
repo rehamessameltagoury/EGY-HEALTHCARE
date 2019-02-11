@@ -45,7 +45,9 @@ $depp=$_POST['dr_dep'];
 $time=$_POST['day'];
 
 //check that the doctor and appointment day entered by user exist
-$sql1= "SELECT name,department FROM doctors WHERE name = '$dr' AND department='$depp' AND appointments LIKE ('%$time%') ";
+$sql1= "SELECT name,department FROM doctors WHERE name = '$dr' AND department='$depp' AND appointments LIKE ('%$time%') ,
+    JOIN patients_appointments ON patients_appointments.doctor = doctors.name ,
+    JOIN users ON users.user_email = patients_appointments.email where users.user_name = '".$name."'";
 $result=mysqli_query($con,$sql1);
 
 //executed when info. entered by user is valid
