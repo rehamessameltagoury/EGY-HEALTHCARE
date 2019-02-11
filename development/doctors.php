@@ -100,7 +100,7 @@ body, html {
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
    
 </div>
 
@@ -136,7 +136,7 @@ class Doctor extends Database
 			$input1 = str_replace(" ", "%", $input1);
 			$input2 = str_replace(" ", "%", $input2);
 			$input3 = str_replace(" ", "%", $input3);
-			$sql = "SELECT * FROM doctors WHERE name LIKE ('%$input1%') AND address LIKE ('%$input2%') AND department LIKE ('%$input3%');";
+			$sql = "SELECT * FROM doctors WHERE name LIKE ('%$input1%') AND department LIKE ('%$input2%') AND address LIKE ('%$input3%');";
 			$statement = Database::$db->prepare($sql);
 			$statement->execute();
 			$doctors = [];
@@ -169,13 +169,19 @@ class Doctor extends Database
 		}
 }
 Database::connect('healthcare system','root','');
-if (isset($_GET['doc_name','city_name','area'])){
-$doc=$_GET['doc_name','city_name','area'];
-$doctors=Doctor::doctors($doc); 
+if (isset($_GET['doc_name']) && isset($_GET['city_name']) && isset($_GET['area'])){
+	//if (isset($_GET['city_name'])){
+		//if (isset($_GET['area'])){
+$doc1=$_GET['doc_name'];
+$doc2=$_GET['city_name'];
+$doc3=$_GET['area'];
+$doctors=Doctor::doctors($doc1,$doc2,$doc3); 
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> </div>";
 	    echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
-	}
+	//}
+//}
+ }
 }
 ?>
 
