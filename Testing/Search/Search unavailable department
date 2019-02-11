@@ -1,9 +1,9 @@
 Preconditions :
-      User have a valid account.
+      None
 
 Steps:
-      1-Enter incorrect username or password
-      2-Click on Submit button
+      1-Write a department that is not available
+      2-Click Enter
       
 Expected Result:
-      A " You have entered incorrect username/password " message appears.
+      A blank page will appear.
