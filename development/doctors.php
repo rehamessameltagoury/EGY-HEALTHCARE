@@ -112,7 +112,7 @@ class Database {
 		
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
-			$dsn = "mysql:host=localhost;dbname=$database";
+			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
 			
 			try {
 		   		Database::$db = new PDO($dsn, $uid, $pwd);
@@ -168,7 +168,7 @@ class Doctor extends Database
 			return $doctors;
 		}
 }
-Database::connect('healthcare system','root','');
+Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
 if (isset($_GET['doc_name']) && isset($_GET['city_name']) && isset($_GET['area'])){
 	//if (isset($_GET['city_name'])){
 		//if (isset($_GET['area'])){
