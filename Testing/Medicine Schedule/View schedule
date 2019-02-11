@@ -1,0 +1,8 @@
+Preconditions:
+    User should be logged in.
+    User clicked on AMedicine Schedule button.
+
+Expected Result:
+    User should be directed to Medicine Schedule page and the correct information are displayed.
+
+
