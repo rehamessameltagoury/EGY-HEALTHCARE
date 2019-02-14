@@ -88,7 +88,7 @@ input[type=text] {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="index.html" target="_self">Home</a> 
+  <a id="position_home" href="index1.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
