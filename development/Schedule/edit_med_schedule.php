@@ -28,7 +28,7 @@ body, html {
     margin: 0;
 }
 .bg {
-    background-image: url("Schedule.jpg");
+    background-image: url("schedule.jpg");
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
@@ -89,11 +89,11 @@ input[type=text] {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="index.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
    
  </div>
    
