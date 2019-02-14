@@ -1,7 +1,7 @@
 <html>
 <head>
-
-	<meta charset="utf-8">
+	
+<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" >
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -34,20 +34,31 @@ a:active {
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
 .bg {
+   /* background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+   /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
     background-image: url("wallpaper.jpg");
+    margin-top: 0px;
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-body, html {
-    height: 100%;
-    margin: 0;
-}
+
 * {
   box-sizing: border-box;
 }
+
 #myInput {
   background-image: url('searchicon.png');
   background-position: 10px 12px;
@@ -58,11 +69,13 @@ body, html {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
@@ -73,24 +86,30 @@ body, html {
   color: black;
   display: block
 }
+
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
+
 .dr{
+
 	 background-color:white;
 	 opacity: 0.7;
-	 margin-top: 50px;
+	 
 }
+
 .drbutton{
+
 	 background-color:white;
 	 opacity: 0.7;
 	 margin-top: 0px;
 }
+
 </style>
 
 </head>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
+<div style="background-color:white;color:brown;padding:20px;height:160px">
 
   <div id="logo">
   <img src="logo.jpg" alt="logo">
