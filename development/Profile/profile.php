@@ -133,7 +133,7 @@ th {
   <button class="dropbtn">Username</button>
   <div class="dropdown-content">
     <a href="#">Profile</a>
-    <a href="#">Sign Out</a>
+    <a href="logout.php">Sign Out</a>
   </div>
 </div>
    
