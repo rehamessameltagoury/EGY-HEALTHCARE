@@ -34,16 +34,25 @@ a:active {
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
 .bg {
+   /* background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+   /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
     background-image: url("wallpaper.jpg");
+    margin-top: 0px;
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-body, html {
-    height: 100%;
-    margin: 0;
 }
 
 * {
@@ -86,7 +95,7 @@ body, html {
 
 	 background-color:white;
 	 opacity: 0.7;
-	 margin-top: 50px;
+	 
 }
 
 .drbutton{
@@ -100,8 +109,7 @@ body, html {
 
 </head>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
-
+<div style="background-color:white;color:brown;padding:20px;height:160px">
   <div id="logo">
   <img src="logo.jpg" alt="logo">
   </div>
@@ -110,7 +118,7 @@ body, html {
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
    
 </div>
 
@@ -124,7 +132,7 @@ class Database {
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
 
-			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
+			$dsn = "mysql:host=localhost;dbname=$database";
 			
 			try {
 		   		Database::$db = new PDO($dsn, $uid, $pwd);
@@ -160,7 +168,7 @@ class Doctor extends Database
 		}
 }
 
-Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
+Database::connect('healthcare system','root','');
 if (isset($_GET['search'])){
 $dep=$_GET['search'];
 $doctors=Doctor::all($dep); 
