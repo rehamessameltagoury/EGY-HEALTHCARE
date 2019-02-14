@@ -176,12 +176,17 @@ $doc1=$_GET['doc_name'];
 $doc2=$_GET['city_name'];
 $doc3=$_GET['area'];
 $doctors=Doctor::doctors($doc1,$doc2,$doc3); 
+if(!empty($doctors)){
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> </div>";
 	    //echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
 	//}
 //}
  }
+}
+else {
+	echo "<div class='dr'> <B> No results found! </B> <br> Please make sure you're entering valid data. </div>";
+}
 }
 ?>
 
