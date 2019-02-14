@@ -1,0 +1,10 @@
+Preconditions :
+    User creates an account or already has one.
+    
+Steps : 
+    1- Login to account
+    2- Check data displayed
+    
+Expected Result :
+    User's data is displayed correctly
+    
