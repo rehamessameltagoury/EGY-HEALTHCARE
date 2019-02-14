@@ -28,7 +28,7 @@ body, html {
     margin: 0;
 }
 .bg {
-    background-image: url("Schedule.jpg");
+    background-image: url("schedule.jpg");
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
@@ -43,23 +43,12 @@ body, html {
       font-size: 25px;
       color: white;
       
-      position: absolute; top: -5px; left: 641px;
-
-}
-.button_add{
-  border-radius: 8px;
-            background-color: #008CBA;
-      width: 165px;
-      height:60px;
-      font-size: 25px;
-      color: white;
-
-      
-      position: absolute; top: 350px; left: 70px;
+      position: absolute; top: 250px; left: 860px;
 
 }
 
-form {
+
+table {
     font-family: Georgia, serif;
     border-collapse: collapse;
     width: 60%;
@@ -99,11 +88,11 @@ input[type=text] {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="index.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
    
  </div>
    
