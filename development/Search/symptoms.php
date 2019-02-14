@@ -156,8 +156,8 @@ class Doctor extends Database
 		}
 }
 Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
-if (isset($_GET['searchsym'])){
-$dep=$_GET['searchsym'];
+if (isset($_GET['search'])){
+$dep=$_GET['search'];
 $doctors=Doctor::allsymptoms($dep); 
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> </div>";
