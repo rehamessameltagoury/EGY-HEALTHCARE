@@ -1,8 +1,3 @@
-<?php
-  include_once 'include/dbh_inc.php';
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,11 +74,11 @@ td, th {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="index.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
    
  </div>
    
@@ -92,16 +87,20 @@ td, th {
            <a href="add_app_schedule.php" target="_self" style="color:white" > Add New Appointment </a>
     </button>
     <?php
+    include_once 'include/dbh_inc.php';
+    session_start();
      
-     $user=$_SESSION['username'];
+     $username=$_SESSION['username'];
      
-    $sql = "SELECT * FROM appointment , JOIN users ON users.user_name = appointment.user_name WHERE users.user_name = '".$username."'";
+    $sql = "SELECT * FROM appointment JOIN users ON users.user_name = appointment.user_name WHERE users.user_name = '$username'";
+    
     $result = mysqli_query($conn, $sql);
+
 
     echo "<table>";
       echo"<tr><th>Doctor</th><th>Date</th></tr>";
       while($row = mysqli_fetch_assoc($result)){
-        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time'] } <a href='edit_app_schedule.php?edit=$row[id]&name=$row[Dr_name]&time=$row[App_time]'>  edit</a> </td></tr>";
+        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time'] } <a href='edit_app_schedule.php?edit=$row[id]&name=$row[Dr_name]&time=$row[App_time]'>  (edit)</a> <a href='include/del_app_inc.php?del=$row[id]'> (delete)</a> </td></tr>";
         
 
      }
