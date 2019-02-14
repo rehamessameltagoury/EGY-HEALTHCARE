@@ -4,6 +4,14 @@
 
 <title>EGY Healthcare System</title>
 
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 <style>
 a:link {
     text-decoration: none;
@@ -34,39 +42,40 @@ body, html {
     background-size: cover;
     font-size:35px;
     padding: 7px;
+    margin-top: 40px;
 }
 .button_symp {
             
-			border-radius: 8px;
+      border-radius: 8px;
             background-color: #008CBA;
-			width: 300px;
-			height:200px;
-			font-size: 25px;
-			color: white;
-			
-			position: absolute; top: 400px; left: 200px;
+      width: 300px;
+      height:200px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 400px; left: 200px;
 }
 .button_dep {
             
-			border-radius: 8px;
+      border-radius: 8px;
             background-color: #008CBA;
-			width: 300px;
-			height:200px;
-			font-size: 25px;
-			color: white;
-			
-			position: absolute; top: 400px; left: 615px;
+      width: 300px;
+      height:200px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 400px; left: 615px;
 }
 .button_dr {
             
-			border-radius: 8px;
+      border-radius: 8px;
             background-color: #008CBA;
-			width: 300px;
-			height:200px;
-			font-size: 25px;
-			color: white;
-			
-			position: absolute; top: 400px; left: 1020px;
+      width: 300px;
+      height:200px;
+      font-size: 25px;
+      color: white;
+      
+      position: absolute; top: 400px; left: 1020px;
 }
 input[type=text] {
     width: 100%;
@@ -100,23 +109,25 @@ input[type=text] {
  </div>
    
    <div class="bg">
-    <p style="text-align: center" >Search For Doctor</p>
+    <p style="text-align: center; margin-top:10px" >Search For Doctor</p>
   
    <p >Search by doctor's name</p>
 
-<form action="doctor.php" method="get">
+<form action="doctors.php" method="get">
   <input type="text" name="doc_name" placeholder="Search for name">
 
    
-   <p >Search by City name</p>
+   <p >Search Department</p>
 
 
   <input type="text" name="city_name" placeholder="Search for city">
 
-<p >Search by Department</p>
+<p >Search by City and area </p>
 
 
   <input type="text" name="area" placeholder="Search for department">
+
+  <input type="submit" value="Search" class="btn btn-primary btn-lg">
  
 </form>
 
