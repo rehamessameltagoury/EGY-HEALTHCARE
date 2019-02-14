@@ -34,16 +34,25 @@ a:active {
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
 .bg {
+   /* background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+   /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
     background-image: url("wallpaper.jpg");
+    margin-top: 0px;
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-body, html {
-    height: 100%;
-    margin: 0;
 }
 
 * {
@@ -86,7 +95,7 @@ body, html {
 
 	 background-color:white;
 	 opacity: 0.7;
-	 margin-top: 50px;
+	 
 }
 
 .drbutton{
@@ -100,7 +109,7 @@ body, html {
 
 </head>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
+<div style="background-color:white;color:brown;padding:20px;height:160px">
 
   <div id="logo">
   <img src="logo.jpg" alt="logo">
@@ -168,7 +177,7 @@ if(!empty($doctors)){
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4>
 		      <h4>$doctor->appointments</h4>  </div>";
-	   /* echo '<button type="button" class="btn btn-danger"><a href="book.html" target="_self" style="color:white" > Book </a></button>
+	   /*echo '<button type="button" class="btn btn-danger"><a href="book.html" target="_self" style="color:white" > Book </a></button>
 	         <button type="button" class="btn btn-danger">
 	    	<a href="searchSpecialty.html" target="_self" style="color:white" > Review </a> </button>';*/
 	  
@@ -180,4 +189,5 @@ foreach ($doctors as $doctor) {
 }
 }
 ?>
+</div>
 </html>
