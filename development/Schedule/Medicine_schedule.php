@@ -1,7 +1,4 @@
-<?php
-  include_once 'include/dbh_inc.php';
-  session_start();
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +28,7 @@ body, html {
     margin: 0;
 }
 .bg {
-    background-image: url("Schedule.jpg");
+    background-image: url("schedule.jpg");
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
@@ -79,11 +76,11 @@ td, th {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="index1.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
    
  </div>
    
@@ -92,10 +89,11 @@ td, th {
            <a href="add_med_schedule.php" target="_self" style="color:white" > Add New Medicine </a>
     </button>
     <?php
-     
+     include_once 'include/dbh_inc.php';
+    session_start();
      $username= $_SESSION['username'];
      
-    $sql = "SELECT * FROM medicine , JOIN users ON users.user_name = medicine.user_name WHERE users.user_name = '".$username."'";
+    $sql = "SELECT * FROM medicine JOIN users ON users.user_name = medicine.user_name WHERE users.user_name = '$username'";
     $result = mysqli_query($conn, $sql);
 
     echo "<table>";
