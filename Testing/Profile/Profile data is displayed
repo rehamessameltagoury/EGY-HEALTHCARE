@@ -3,8 +3,9 @@ Preconditions :
     
 Steps : 
     1- Login to account
-    2- Check data displayed
+    2- Check the displayed data
     
 Expected Result :
     User's data is displayed correctly.
+    
     
