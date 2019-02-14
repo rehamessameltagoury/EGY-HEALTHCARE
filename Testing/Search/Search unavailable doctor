@@ -6,4 +6,5 @@ Steps:
       2-Press Enter.
       
 Expected Result:
-   	No results displayed (no matching results found).
+   	 An error message telling the user that no matching results where found and asking him to make
+      sure that he is entering valid data.
