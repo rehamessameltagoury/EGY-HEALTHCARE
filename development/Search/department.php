@@ -45,9 +45,11 @@ body, html {
     height: 100%;
     margin: 0;
 }
+
 * {
   box-sizing: border-box;
 }
+
 #myInput {
   background-image: url('searchicon.png');
   background-position: 10px 12px;
@@ -58,11 +60,13 @@ body, html {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
+
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
@@ -73,19 +77,25 @@ body, html {
   color: black;
   display: block
 }
+
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
+
 .dr{
+
 	 background-color:white;
 	 opacity: 0.7;
 	 margin-top: 50px;
 }
+
 .drbutton{
+
 	 background-color:white;
 	 opacity: 0.7;
 	 margin-top: 0px;
 }
+
 </style>
 
 </head>
@@ -100,19 +110,21 @@ body, html {
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
    
 </div>
 
 <div class="bg" style="text-align: center;">
 
 <?php 
+
 class Database {
 		protected static $db = null;
 		
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
-			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
+
+			$dsn = "mysql:host=localhost;dbname=$database";
 			
 			try {
 		   		Database::$db = new PDO($dsn, $uid, $pwd);
@@ -121,6 +133,8 @@ class Database {
 			}
 		}
 	}
+
+
 class Doctor extends Database
 {
 	function __construct($id) {
@@ -132,6 +146,7 @@ class Doctor extends Database
 			foreach ($data as $key => $value) {
 				$this->{$key} = $value;
 			} }
+
 	public static function all($keyword) {
 			$keyword = str_replace(" ", "%", $keyword);
 			$sql = "SELECT * FROM doctors WHERE department like ('%$keyword%');";
@@ -144,14 +159,25 @@ class Doctor extends Database
 			return $doctors;
 		}
 }
-Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
+
+Database::connect('healthcare system','root','');
 if (isset($_GET['search'])){
 $dep=$_GET['search'];
-$doctors=Doctor::all($dep); 
+$doctors=Doctor::all($dep);
+if(!empty($doctors)){ 
 foreach ($doctors as $doctor) {
-		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> </div>";
-	    echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
+		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4>
+		      <h4>$doctor->appointments</h4>  </div>";
+	   /* echo '<button type="button" class="btn btn-danger"><a href="book.html" target="_self" style="color:white" > Book </a></button>
+	         <button type="button" class="btn btn-danger">
+	    	<a href="searchSpecialty.html" target="_self" style="color:white" > Review </a> </button>';*/
+	  
 	}
+	                }
+
+	 else {
+	echo "<div class='dr'> <B> No results found! </B> <br> Please make sure you're entering valid data. </div>";
+}
 }
 ?>
 </html>
