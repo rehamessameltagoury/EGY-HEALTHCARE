@@ -1,7 +1,7 @@
 <html>
 <head>
-
-	<meta charset="utf-8">
+	
+<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1" >
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -34,16 +34,25 @@ a:active {
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
 .bg {
+   /* background-image: url("wallpaper.jpg");
+    height: 100%; 
+    /* Center and scale the image nicely */
+   /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
     background-image: url("wallpaper.jpg");
+    margin-top: 0px;
     height: 100%; 
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-body, html {
-    height: 100%;
-    margin: 0;
 }
 
 * {
@@ -86,7 +95,7 @@ body, html {
 
 	 background-color:white;
 	 opacity: 0.7;
-	 margin-top: 50px;
+	 
 }
 
 .drbutton{
@@ -100,8 +109,7 @@ body, html {
 
 </head>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
-
+<div style="background-color:white;color:brown;padding:20px;height:160px">
   <div id="logo">
   <img src="logo.jpg" alt="logo">
   </div>
@@ -117,13 +125,11 @@ body, html {
 <div class="bg" style="text-align: center;">
 
 <?php 
-
 class Database {
 		protected static $db = null;
 		
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
-
 			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
 			
 			try {
@@ -133,8 +139,6 @@ class Database {
 			}
 		}
 	}
-
-
 class Doctor extends Database
 {
 	function __construct($id) {
@@ -146,7 +150,6 @@ class Doctor extends Database
 			foreach ($data as $key => $value) {
 				$this->{$key} = $value;
 			} }
-
 	public static function all($keyword) {
 			$keyword = str_replace(" ", "%", $keyword);
 			$sql = "SELECT * FROM doctors WHERE department like ('%$keyword%');";
@@ -158,7 +161,6 @@ class Doctor extends Database
 			}
 			return $doctors;
 		}
-
 	public static function allsymptoms($keyword) {
 			$keyword = str_replace(" ", "%", $keyword);
 			$sql = "SELECT * FROM doctors WHERE symptoms like ('%$keyword%');";
@@ -171,22 +173,21 @@ class Doctor extends Database
 			return $doctors;
 		}
 }
-
-
-
 Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
 if (isset($_GET['search'])){
 $dep=$_GET['search'];
 $doctors=Doctor::allsymptoms($dep); 
-//$appointments=Appointment::getAppointments();
+if(!empty($doctors)){
 foreach ($doctors as $doctor) {
-		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4>
-		      <h4>$doctor->appointments</h4>  </div>";
-	    echo '<button type="button" class="btn btn-danger"><a href="book.html" target="_self" style="color:white" > Book </a></button>
-	         <button type="button" class="btn btn-danger">
-	    	<a href="searchSpecialty.html" target="_self" style="color:white" > Review </a> </button>';
-	  
-	}
+		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> <h4>$doctor->appointments</h4> </div>";
+	    echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
+	//}
+//}
+ }
+}
+else {
+	echo "<div class='dr'> <B> No results found! </B> <br> Please make sure you're entering valid data. </div>";
+}
 }
 ?>
 
