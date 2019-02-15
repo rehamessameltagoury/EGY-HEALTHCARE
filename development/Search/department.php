@@ -177,9 +177,12 @@ if(!empty($doctors)){
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4>
 		      <h4> $doctor->appointments</h4>  </div>";
-	   /*echo '<button type="button" class="btn btn-danger"><a href="book.html" target="_self" style="color:white" > Book </a></button>
-	         <button type="button" class="btn btn-danger">
-	    	<a href="searchSpecialty.html" target="_self" style="color:white" > Review </a> </button>';*/
+	echo "<button type='button' class='btn btn-danger'><a href='book.html' target='_self' style='color:white' >Book</a></button> 
+	          
+	          <form method='get' action='comment.php' id='review' style='display:inline;'>
+              <input type='hidden' name='review' value='$doctor->id'>
+              <button type='submit' class='btn btn-danger'>Review</button>
+              </form>";
 	  
 	}
 	                }
