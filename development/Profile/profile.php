@@ -185,7 +185,9 @@ th {
    <div class="options">
      <button type="button"><a id="appointment" href="App_schedule.php" target="_self">Appointment Schedule</a>
     </div> </button>
-	
+	<div class="options">
+     <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical history</a>
+    </div> </button>
    </div>
  
 
