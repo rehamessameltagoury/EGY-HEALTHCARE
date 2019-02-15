@@ -39,14 +39,16 @@ if (isset($_POST['submit'])) {
 					//hashing the password
 					$hashedpwd= password_hash($psw,PASSWORD_DEFAULT);
 					//insert user inside the database
+					
+					
+					$sql="INSERT INTO USERS (user_first,user_last,user_email,user_name,user_pwd,user_gender) VALUES 
+					('$fname','$lname','$email','$user_name','$psw','$gender');";
+					mysqli_query($conn,$sql);
+					header("Location: ../profile.php?signup=signupsuccess");
 					session_start();
 					$_SESSION['username'] = $user_name;
 					$_SESSION['pwd'] = $psw;
 					
-					$sql="INSERT INTO USERS (user_first,user_last,user_email,user_name,user_pwd,user_gender) VALUES 
-					('$fname','$lname','$email','$user_name','$hashedpwd','$gender');";
-					mysqli_query($conn,$sql);
-					header("Location: ../profile.php?signup=signupsuccess");
 				exit();
 				}
 			
