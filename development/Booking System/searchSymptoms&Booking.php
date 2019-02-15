@@ -33,6 +33,7 @@ a:active {
 #position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+#notifications { position: absolute; top: 57px; left: 1300px; width: 200px ;font-size:25px}
 .bg {
    /* background-image: url("wallpaper.jpg");
     height: 100%; 
@@ -40,7 +41,6 @@ a:active {
    /* background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
-
 }
 body, html {
     height: 100%;
@@ -54,11 +54,9 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 * {
   box-sizing: border-box;
 }
-
 #myInput {
   background-image: url('searchicon.png');
   background-position: 10px 12px;
@@ -69,13 +67,11 @@ body, html {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
-
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
@@ -86,50 +82,52 @@ body, html {
   color: black;
   display: block
 }
-
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
-
 .dr{
-
 	 background-color:white;
 	 opacity: 0.7;
 	 
 }
-
 .drbutton{
-
 	 background-color:white;
 	 opacity: 0.7;
 	 margin-top: 0px;
 }
-
 </style>
-
+<script>
+window.Engagespot={},q=function(e){return function(){(window.engageq=window.engageq||[]).push({f:e,a:arguments})}},f=["captureEvent","subscribe","init","showPrompt","identifyUser","clearUser"];for(k in f)Engagespot[f[k]]=q(f[k]);var s=document.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cdn.engagespot.co/EngagespotSDK.2.0.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x);Engagespot.init('2pPMXEqgemY6QwNRguxpJBV7EdaImi');</script>
 </head>
 
+
 <div style="background-color:white;color:brown;padding:20px;height:160px">
+
+
   <div id="logo">
   <img src="logo.jpg" alt="logo">
   </div>
   
-<a id="position_home" href="home.html" target="_self">Home</a> 
+<a id="position_home" href="index1.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
+
+  <a id="notifications"href="#"></a>
    
 </div>
 
 <div class="bg" style="text-align: center;">
 
 <?php 
+
 class Database {
 		protected static $db = null;
 		
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
+
 			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
 			
 			try {
@@ -139,6 +137,8 @@ class Database {
 			}
 		}
 	}
+
+
 class Doctor extends Database
 {
 	function __construct($id) {
@@ -150,6 +150,7 @@ class Doctor extends Database
 			foreach ($data as $key => $value) {
 				$this->{$key} = $value;
 			} }
+
 	public static function all($keyword) {
 			$keyword = str_replace(" ", "%", $keyword);
 			$sql = "SELECT * FROM doctors WHERE department like ('%$keyword%');";
@@ -161,6 +162,7 @@ class Doctor extends Database
 			}
 			return $doctors;
 		}
+
 	public static function allsymptoms($keyword) {
 			$keyword = str_replace(" ", "%", $keyword);
 			$sql = "SELECT * FROM doctors WHERE symptoms like ('%$keyword%');";
@@ -173,19 +175,26 @@ class Doctor extends Database
 			return $doctors;
 		}
 }
+
+
+
 Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
 if (isset($_GET['search'])){
-$dep=$_GET['search'];
-$doctors=Doctor::allsymptoms($dep); 
-if(!empty($doctors)){
+$sym=$_GET['search'];
+$doctors=Doctor::allsymptoms($sym); 
+if(!empty($doctors)){ 
 foreach ($doctors as $doctor) {
-		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> <h4>$doctor->appointments</h4> </div>";
-	    echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
-	//}
-//}
- }
-}
-else {
+		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4>
+		      <h4>$doctor->appointments</h4>  </div>";
+	    echo "<button type='button' class='btn btn-danger'><a href='book.html' target='_self' style='color:white' >Book</a></button> 
+	          <form method='get' action='comment.php' id='review' style='display:inline;'>
+              <input type='hidden' name='review' value='$doctor->id'>
+              <button type='submit' class='btn btn-danger'>Review</button>
+              </form>";
+	  
+	}
+	             }
+ else {
 	echo "<div class='dr'> <B> No results found! </B> <br> Please make sure you're entering valid data. </div>";
 }
 }
