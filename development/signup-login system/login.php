@@ -148,9 +148,9 @@ button:hover {
   <img src="logo.jpg" alt="logo" height="121.5">
   </div>
   
- <a id="position_home" href="home.html" target="_self">Home</a> 
+ <a id="position_home" href="index.html" target="_self">Home</a> 
   
-  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  <a id="position_about" href="about_us1.html" target="_self">About us</a> 
   
   <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
    
