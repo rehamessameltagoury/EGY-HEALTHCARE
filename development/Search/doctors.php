@@ -40,7 +40,6 @@ a:active {
    /* background-position: center;
     background-repeat: no-repeat;
     background-size: cover; */
-
 }
 body, html {
     height: 100%;
@@ -54,11 +53,9 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 * {
   box-sizing: border-box;
 }
-
 #myInput {
   background-image: url('searchicon.png');
   background-position: 10px 12px;
@@ -69,13 +66,11 @@ body, html {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
-
 #myUL {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 #myUL li a {
   border: 1px solid #ddd;
   margin-top: -1px; /* Prevent double borders */
@@ -86,28 +81,23 @@ body, html {
   color: black;
   display: block
 }
-
 #myUL li a:hover:not(.header) {
   background-color: #eee;
 }
-
 .dr{
-
 	 background-color:white;
 	 opacity: 0.7;
 	 
 }
-
 .drbutton{
-
 	 background-color:white;
 	 opacity: 0.7;
 	 margin-top: 0px;
 }
-
 </style>
 
 </head>
+
 
 <div style="background-color:white;color:brown;padding:20px;height:160px">
 
@@ -117,7 +107,7 @@ body, html {
   
 <a id="position_home" href="home.html" target="_self">Home</a> 
   
-  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  <a id="position_about" href="about_us1.html" target="_self">About us</a> 
   
   <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
    
@@ -131,7 +121,7 @@ class Database {
 		
 		public static function connect($database, $uid, $pwd) {
 			if(!empty(Database::$db)) return;
-			$dsn = "mysql:host=localhost;dbname=$database";
+			$dsn = "mysql:host=sql307.epizy.com;dbname=$database";
 			
 			try {
 		   		Database::$db = new PDO($dsn, $uid, $pwd);
@@ -187,7 +177,7 @@ class Doctor extends Database
 			return $doctors;
 		}
 }
-Database::connect('healthcare system','root','');
+Database::connect('epiz_23426192_Healthcare','epiz_23426192','qrhufcVnYDEVx');
 if (isset($_GET['doc_name']) && isset($_GET['city_name']) && isset($_GET['area'])){
 	//if (isset($_GET['city_name'])){
 		//if (isset($_GET['area'])){
@@ -198,12 +188,9 @@ $doctors=Doctor::doctors($doc1,$doc2,$doc3);
 if(!empty($doctors)){
 foreach ($doctors as $doctor) {
 		echo "<div class='dr'><p><B><h3> Dr/ $doctor->name</h3></B> <h4>$doctor->address</h4> <h4>$doctor->department</h4> <h4>$doctor->telephone</h4> <h4>$doctor->appointments</h4> </div>";
-	echo "<button type='button' class='btn btn-danger'><a href='book.html' target='_self' style='color:white' >Book</a></button> 
-	          
-	          <form method='get' action='comment.php' id='review' style='display:inline;'>
-              <input type='hidden' name='review' value='$doctor->id'>
-              <button type='submit' class='btn btn-danger'>Review</button>
-              </form>";
+	    //echo '<button type="button" class="btn btn-danger">Book</button> <button type="button" class="btn btn-danger">Review</button>';
+	//}
+//}
  }
 }
 else {
