@@ -47,3 +47,21 @@ CREATE TABLE appointment (
     Dr_name varchar(256) not null,
     App_time date not null
 );
+//REVIEWS tables
+CREATE TABLE parents (
+     id int (11) NOT null AUTO_INCREMENT PRIMARY KEY,
+     username varchar (64) NOT null ,
+     text text  NOT null ,
+     date datetime NOT null ,
+     code varchar (10) NOT null  ,
+     docname int(11) NOT null
+     
+);
+CREATE TABLE children (
+     id int (11) NOT null ,
+     username varchar (64) NOT null ,
+     text text  NOT null ,
+     date datetime NOT null ,
+     par_code varchar (10) NOT null  
+     docname int(11) NOT null
+);
