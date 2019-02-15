@@ -1,3 +1,8 @@
+<?php
+  //include_once 'include/dbh_inc.php';
+//session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +26,7 @@ a:active {
 #position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+#notifications { position: absolute; top: 57px; left: 1300px; width: 200px ;font-size:25px}
 body, html {
     height: 100%;
     margin: 0;
@@ -62,7 +68,8 @@ td, th {
 
 
 </style>
-
+<script>
+window.Engagespot={},q=function(e){return function(){(window.engageq=window.engageq||[]).push({f:e,a:arguments})}},f=["captureEvent","subscribe","init","showPrompt","identifyUser","clearUser"];for(k in f)Engagespot[f[k]]=q(f[k]);var s=document.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cdn.engagespot.co/EngagespotSDK.2.0.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x);Engagespot.init('2pPMXEqgemY6QwNRguxpJBV7EdaImi');</script>
 </head>
 <body>
 
@@ -79,6 +86,8 @@ td, th {
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
   <a id="position_sign" href="profile.php" target="_self">Profile</a>
+
+  <a id="notifications"href="#"></a>
    
  </div>
    
@@ -92,15 +101,16 @@ td, th {
      
      $username=$_SESSION['username'];
      
-    $sql = "SELECT * FROM appointment JOIN users ON users.user_name = appointment.user_name WHERE users.user_name = '$username'";
-    
+    $sql = "SELECT * FROM appointment JOIN users ON users.user_name = appointment.user_name WHERE users.user_name = '$username' ";
+    //$sql = "INSERT INTO appointment(Dr_name, App_time) SELECT user_name FROM users WHERE user_name = '$username';";
     $result = mysqli_query($conn, $sql);
 
 
     echo "<table>";
       echo"<tr><th>Doctor</th><th>Date</th></tr>";
       while($row = mysqli_fetch_assoc($result)){
-        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time'] } <a href='edit_app_schedule.php?edit=$row[id]&name=$row[Dr_name]&time=$row[App_time]'>  (edit)</a> <a href='include/del_app_inc.php?del=$row[id]'> (delete)</a> </td></tr>";
+        echo"<tr><td>{$row['Dr_name']}</td><td>{$row['App_time'] } <a href='edit_app_schedule.php?edit=$row[id]&name=$row[Dr_name]&time=$row[App_time]'>  (edit)</a>
+         <a href='include/del_app_inc.php?del=$row[id]'> (delete)</a> </td></tr>";
         
 
      }
