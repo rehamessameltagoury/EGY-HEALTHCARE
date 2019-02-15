@@ -1,11 +1,8 @@
- <?php
+<?php
 // Start the session
 session_start();
-?>
- 
- 
- <!DOCTYPE html>
- 
+?> 
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -24,9 +21,12 @@ a:hover {
 a:active {
     text-decoration: none;
 }
+
 #logo { position: absolute; top: 0px; left: 200px; width: 200px }
 #position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
+#notifications { position: absolute; top: 57px; left: 1300px; width: 200px ;font-size:25px}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -72,6 +72,12 @@ body, html {
     text-align:justify;
     width:250px;   
 }
+.right
+_panel {
+   
+    text-align:justify;
+    width:250px;   
+}
 .options{
     
     font-size: 20px;
@@ -112,43 +118,60 @@ th {
 	color:DarkBlue;
 	
 }
+
+.button_symp {
+            
+            border-radius: 8px;
+            background-color: #008CBA;
+			width: 250px;
+			height: 100px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 545px; left: 300px;
+
+}
+
+.button_dep {
+            
+	        border-radius: 8px;
+            background-color: #008CBA;
+			width: 250px;
+			height: 100px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 545px; left: 600px;
+}
+
+.button_dr {
+            
+	        border-radius: 8px;
+            background-color: #008CBA;
+			width: 250px;
+			height: 100px;
+			font-size: 25px;
+			color: white;
+			
+			position: absolute; top: 545px; left: 900px;
+
+}
+
+button:hover {
+    opacity:1;
+}
+
+
 </style>
+<script>
+window.Engagespot={},q=function(e){return function(){(window.engageq=window.engageq||[]).push({f:e,a:arguments})}},f=["captureEvent","subscribe","init","showPrompt","identifyUser","clearUser"];for(k in f)Engagespot[f[k]]=q(f[k]);var s=document.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cdn.engagespot.co/EngagespotSDK.2.0.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x);Engagespot.init('2pPMXEqgemY6QwNRguxpJBV7EdaImi');</script>
 
 </head>
 
 
 <body>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
-
-  <div id="logo">
-  <img src="logo.jpg" alt="logo">
-  </div>
-  
-  <a id="position_home" href="index1.html" target="_self">Home</a> 
-  
-  <a id="position_about" href="about_us.html" target="_self">About us</a> 
-  
-  <div class="dropdown">
-  <button class="dropbtn">Username</button>
-  <div class="dropdown-content">
-    <a href="#">Profile</a>
-    <a href="logout.php">Sign Out</a>
-  </div>
-</div>
-   
- </div>
-   
-   <div class="bg">
-    <div class="left_panel" style="float:left">
-   
-     
-     <img src="profilephoto.jpg" alt="user_image" style="width:250px;height:250px;padding:5px; border-radius:200px">
-    
-	 
-	 <?php 
-	 
-	 
+<?php 	 
 	 //database connection
 	$dbservername="sql307.epizy.com";
 	$dbUsername="epiz_23426192";
@@ -161,7 +184,7 @@ th {
 	
    $username = $_SESSION['username'];
    $pwd= $_SESSION['pwd'];
-   $get = mysqli_query($conn,"SELECT * FROM USERS WHERE user_name='".$username."' AND user_pwd='".$pwd."';");
+   $get = mysqli_query($conn,"SELECT * FROM users WHERE user_name='".$username."' AND user_pwd='".$pwd."';");
    $get2 = mysqli_fetch_assoc($get);
    $firstname = $get2{'user_first'};
    $lastname = $get2{'user_last'};
@@ -170,12 +193,39 @@ th {
    $gender = $get2{'user_gender'};
    
    
-   ?>
-	 
-	  
-	  
+?>
+
+
+<div style="background-color:white;color:brown;padding:20px;height:120px">
+
+  <div id="logo">
+  <img src="logo.jpg" alt="logo">
+  </div>
+  
+  <a id="position_home" href="index1.html" target="_self">Home</a> 
+  
+  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  
+   <a id="notifications"href="#"></a>
+  <div class="dropdown">
+  <button class="dropbtn"><?php echo $username; ?> </button>
+  <div class="dropdown-content">
+    <a href="#">Profile</a>
+    <a href="logout.php">Sign Out</a>
+  </div>
+ 
+</div>
+   
+ </div>
+   
+   <div class="bg">
+    <div class="left_panel" style="float:left">
+   
+     
+     <img src="profilephoto.jpg" alt="user_image" style="width:250px;height:250px;padding:5px; border-radius:200px">
+
 	  <div class="options">
-       <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical history</a> <br>
+       <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical History</a> <br>
       </div></button>
     
 	<div class="options">
@@ -185,7 +235,9 @@ th {
    <div class="options">
      <button type="button"><a id="appointment" href="App_schedule.php" target="_self">Appointment Schedule</a>
     </div> </button>
-	
+	<!--<div class="options">
+     <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical history</a>
+    </div> </button> -->
    </div>
  
 
@@ -215,6 +267,20 @@ th {
 
 </table>
    </div>
+
+     <button class="button_symp" > 
+   <a href="symptoms&booking.html" target="_self" style="color:white" > Search for Symptoms </a>
+   </button>
+   
+   <button class="button_dep" > 
+   <a href="department&booking.html" target="_self" style="color:white" > Search for a Department </a>
+   </button>
+   
+   <button class="button_dr" > 
+   <a href="doctors&booking.html" target="_self" style="color:white" > Search for a Doctor </a>
+   </button>
+
+
    </div>
    
    </body>
