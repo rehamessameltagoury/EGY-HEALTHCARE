@@ -122,7 +122,7 @@ button:hover {
 		<div class="page-container">
 			<?php
              
-             $text=$_POST["review"];
+                                $text=$_GET["review"];
 				get_total($text); //get number of total comments written
 				require_once 'php/check_com.php';
 			?>
