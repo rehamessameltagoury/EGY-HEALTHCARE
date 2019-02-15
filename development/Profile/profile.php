@@ -125,7 +125,7 @@ th {
   <img src="logo.jpg" alt="logo">
   </div>
   
-  <a id="position_home" href="home.html" target="_self">Home</a> 
+  <a id="position_home" href="index1.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
@@ -175,7 +175,7 @@ th {
 	  
 	  
 	  <div class="options">
-       <button type="button"><a id="about" href="Profile.php" target="_self">About</a> <br>
+       <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical history</a> <br>
       </div></button>
     
 	<div class="options">
@@ -185,9 +185,7 @@ th {
    <div class="options">
      <button type="button"><a id="appointment" href="App_schedule.php" target="_self">Appointment Schedule</a>
     </div> </button>
-	<div class="options">
-     <button type="button"><a id="medical_history" href="medical_history.php" target="_self">Medical history</a>
-    </div> </button>
+	
    </div>
  
 
