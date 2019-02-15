@@ -21,6 +21,8 @@ a:active {
 #position_home { position: absolute; top: 57px; left: 680px; width: 200px ;font-size:25px}
 #position_about { position: absolute; top: 57px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 57px; left: 1080px; width: 200px ;font-size:25px}
+#notifications { position: absolute; top: 57px; left: 1300px; width: 200px ;font-size:25px}
+
 .bg {
     background-image: url("wallpaper.jpg");
     height: 100%; 
@@ -80,11 +82,13 @@ body, html {
   <img src="logo.jpg" alt="logo">
   </div>
   
-<a id="position_home" href="home.html" target="_self">Home</a> 
+<a id="position_home" href="index1.html" target="_self">Home</a> 
   
   <a id="position_about" href="about_us.html" target="_self">About us</a> 
   
-  <a id="position_sign" href="Sign_Up_form.html" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self">Profile</a>
+
+  <a id="notifications"href="#"></a>
    
 </div>
    
@@ -93,14 +97,12 @@ body, html {
    <p style="color:black;font-size:50px;padding: 40px;">Search for Symptoms</p>
 
 <form method="get" action="searchSymptoms&Booking.php">
-  <input type="text" name="searchsym" id="myInput" onkeyup="myFunction()" placeholder="Search for Symptoms.." title="Type in a symptom">
+  <input type="text" name="search" id="myInput" onkeyup="myFunction()" placeholder="Search for Symptoms.." title="Type in a symptom">
   <ul id="myUL">
-  <li><a href="#">Abdominal pain</a></li>
-  <li><a href="#">Chest pain</a></li>
-  <li><a href="#">Cold</a></li>
-   <li><a href="#">Headache</a></li>
-  <li><a href="#">Fever</a></li>
-  <li><a href="#">Flu</a></li>
+    <li><a href="#">surgery</a></li>
+   <li><a href="#">Ear, Nose and Throat Pain</a></li>
+  <li><a href="#">pregnancy</a></li>
+  <li><a href="#">Acne</a></li>
   <li><a href="#">Toothache</a></li>
   </ul>
 
