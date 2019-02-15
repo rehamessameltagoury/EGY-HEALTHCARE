@@ -1,12 +1,12 @@
 # SE2018G16
 Software Engineering project
   
-  "EGY HEALTHCARE SYSTEM"
+"EGY HEALTHCARE SYSTEM"
   
-  **Description:
+**Description:
   
-  This website is an online Doctors' Directory which aims to help patients to identify the suitable doctor for them.
-  It also allows the patient to make an account to book the best appointment with their doctor, they create schedules for their       medications and appointments to keep track with them and to upload his medical profile.
+This website is an online Doctors' Directory which aims to help patients to identify the suitable doctor for them. 
+It also allows the patient to make an account to book the best appointment with their doctor, they create schedules for their       medications and appointments to keep track with them and to upload his medical profile.Users recieve daily notifications and health insights. 
 
 **Team Members:
 
@@ -32,4 +32,3 @@ Nada Mohamed Mohamed Abdel-Hamid
 
 **WEBSITE'S LINK : http://egyhealthcare.epizy.com/
 
- 
