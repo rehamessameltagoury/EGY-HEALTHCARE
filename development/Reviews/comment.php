@@ -9,35 +9,51 @@
 		<script src="js/global.js"></script>	
 
 <style>
-a:link {
+a,.old:link {
     text-decoration: none;
 }
-a:visited {
+a,.old:visited {
     text-decoration: none;
 }
-a:hover {
+a,.old:hover {
     text-decoration: none;
 }
-a:active {
+a,.old:active {
     text-decoration: none;
 }
 #logo { position: absolute; top: 0px; left: 200px; width: 200px }
 #position_home { position: absolute; top: 43px; left: 680px; width: 200px ;font-size:25px}
 #position_about { position: absolute; top: 43px; left:880px; width: 200px ;font-size:25px}
 #position_sign { position: absolute; top: 43px; left: 1080px; width: 200px ;font-size:25px}
+#notifications { position: absolute; top: 57px; left: 1300px; width: 200px ;font-size:25px}
 body, html {
     height: 100%;
     margin: 0;
-}
-.bg {
-    background-image: url("form.jpg");
-    height: 100%;  width: 50%;
+    background-attachment: fixed;
+     background-image: url("comment.jpg");
+
+    height: 100%; 
+
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-body {font-family: Arial, Helvetica, sans-serif;}
+
+.bg {
+
+   /* background-image: url("comment.jpg");
+
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+   /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+body {font-family: Arial, Helvetica, sans-serif;
+
+}
 * {box-sizing: border-box}
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -99,30 +115,33 @@ button:hover {
 }
 #sign { position: absolute; left: 780px; height=100%}
 </style>
-
+<script>
+window.Engagespot={},q=function(e){return function(){(window.engageq=window.engageq||[]).push({f:e,a:arguments})}},f=["captureEvent","subscribe","init","showPrompt","identifyUser","clearUser"];for(k in f)Engagespot[f[k]]=q(f[k]);var s=document.createElement("script");s.type="text/javascript",s.async=!0,s.src="https://cdn.engagespot.co/EngagespotSDK.2.0.js";var x=document.getElementsByTagName("script")[0];x.parentNode.insertBefore(s,x);Engagespot.init('2pPMXEqgemY6QwNRguxpJBV7EdaImi');</script>
 </head>
 <body>
 
-<div style="background-color:white;color:brown;padding:20px;height:120px">
+<div style="background-color:white;color:brown;padding:20px;height:160px">
 
   <div id="logo">
   <img src="logo.jpg" alt="logo" height="121.5">
   </div>
   
- <a id="position_home" href="home.html" target="_self">Home</a> 
+ <a class='old' id="position_home" href="index1.html" target="_self" style="text-transform:none;text-decoration:none;color:blue">Home</a> 
   
-  <a id="position_about" href="about_us.html" target="_self">About us</a> 
+  <a id="position_about" href="about_us.html" target="_self" style="text-transform:none;color:blue">About us</a> 
   
-  <a id="position_sign" href="signup.php" target="_self">Sign up/Login</a>
+  <a id="position_sign" href="profile.php" target="_self" style="text-transform:none;color:blue">Profile</a>
+
+  <a id="notifications"href="#"></a>
    
  </div>
 
 	</head>
 	<body>
+        <div class='bg'>
 		<div class="page-container">
-			<?php
-             
-                                $text=$_GET["review"];
+			<?php 
+                $text=$_GET['review'];
 				get_total($text); //get number of total comments written
 				require_once 'php/check_com.php';
 			?>
@@ -135,5 +154,6 @@ button:hover {
 			<?php get_comments($text); //get comments on screen
 			?> 
 		</div>
+    </div>
 	</body>
 </html>
